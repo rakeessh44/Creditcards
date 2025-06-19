@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Image Tiles</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+        }
+        .tile-card {
+            /* Custom styling for the tile, complementing Tailwind */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        .tile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .tile-image {
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">Finance Deals</h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Tile 1 -->
+            <div class="tile-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center p-4"
+                 data-url="https://bitli.in/0jFmdwt">
+                <img src="https://www.cardexpert.in/wp-content/uploads/2022/09/axis-myzone-credit-card.jpg" alt="Arts & Culture"
+                     class="w-full h-48 rounded-md tile-image mb-4">
+                <h2 class="text-xl font-semibold text-gray-800 text-center">Axis Credit Card</h2>
+                <p class="text-gray-600 text-center mt-2">Discover creative expressions.</p>
+            </div>
+
+            <!-- Tile 2 -->
+            <div class="tile-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center p-4"
+                 data-url="https://bitli.in/7seWV2S">
+                <img src="https://ahktips.com/wp-content/uploads/2025/03/Cashback-SBI-Credit-Card-1024x576.webp" alt="Technology"
+                     class="w-full h-48 rounded-md tile-image mb-4">
+                <h2 class="text-xl font-semibold text-gray-800 text-center">SBI Credit Card</h2>
+                <p class="text-gray-600 text-center mt-2">5% Cashback on Online Spends</p>
+            </div>
+
+            <!-- Tile 3 -->
+            <div class="tile-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center p-4"
+                 data-url="https://bitli.in/9wwt2LF">
+                <img src="https://www.paisabazaar.com/wp-content/uploads/2022/09/Amazon-Pay-Credit-Card-Offer.jpg" alt="Nature & Wildlife"
+                     class="w-full h-48 rounded-md tile-image mb-4">
+                <h2 class="text-xl font-semibold text-gray-800 text-center">ICICI Credit Card</h2>
+                <p class="text-gray-600 text-center mt-2">Lifetime FREE Credit Card(Select Variants).</p>
+            </div>
+
+            <!-- Tile 4 -->
+            <div class="tile-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center p-4"
+                 data-url="https://bitli.in/Kqs0887">
+                <img src="https://cardmaven.in/wp-content/uploads/2022/05/IndianOil-HDFC-Bank-Credit-Card.webp" alt="Science & Research"
+                     class="w-full h-48 rounded-md tile-image mb-4">
+                <h2 class="text-xl font-semibold text-gray-800 text-center">HDFC Credit Card</h2>
+                <p class="text-gray-600 text-center mt-2">Latest discoveries and studies.</p>
+            </div>
+            
+            <!-- Tile 5 -->
+            <div class="tile-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center p-4"
+                 data-url="https://bitli.in/8Mabt6E">
+                <img src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/in/wp-content/uploads/2022/04/Untitled-design-33.png" alt="Shopping"
+                     class="w-full h-48 rounded-md tile-image mb-4">
+                <h2 class="text-xl font-semibold text-gray-800 text-center">Bajaj Finserv</h2>
+                <p class="text-gray-600 text-center mt-2">Get your Insta EMI Card in 3 clicks.</p>
+            </div>
+
+            <!-- Tile 6 -->
+            <div class="tile-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col items-center p-4"
+                 data-url="https://bitli.in/ok1e7VP">
+                <img src="https://www.paisabazaar.com/wp-content/uploads/2025/01/Flipkart-Axis-Credit-Cardd_2.jpg" alt="Travel"
+                     class="w-full h-48 rounded-md tile-image mb-4">
+                <h2 class="text-xl font-semibold text-gray-800 text-center">Flipkart Axis Bank Card</h2>
+                <p class="text-gray-600 text-center mt-2">5% Unlimited Cashback on Flipkart</p>
+            </div>
+
+            
+
+        </div>
+    </div>
+
+    <script>
+        // Get all elements with the class 'tile-card'
+        const tiles = document.querySelectorAll('.tile-card');
+
+        // Add a click event listener to each tile
+        tiles.forEach(tile => {
+            tile.addEventListener('click', () => {
+                // Get the URL from the 'data-url' attribute of the clicked tile
+                const url = tile.getAttribute('data-url');
+                if (url) {
+                    // Navigate to the URL
+                    window.location.href = url;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
